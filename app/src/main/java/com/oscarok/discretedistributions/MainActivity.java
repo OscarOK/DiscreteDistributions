@@ -16,8 +16,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.oscarok.discretedistributions.distributions.BinomialDistribution;
+import com.oscarok.discretedistributions.distributions.Geometric;
+import com.oscarok.discretedistributions.distributions.Negative;
 import com.oscarok.discretedistributions.distributions.Poisson;
 import com.oscarok.discretedistributions.fragments.BinomialFragment;
 import com.oscarok.discretedistributions.fragments.MultinomialFragment;
@@ -53,25 +57,56 @@ public class MainActivity extends AppCompatActivity
                     case 0:
 
                     case 1:
-                        checkBinomialInput();
+                        if (checkBinomialInput()) {
+                            BinomialDistribution binomialDistribution = new BinomialDistribution(
+                                    Integer.parseInt(etSuccess.getText().toString()),
+                                    Integer.parseInt(etExperiments.getText().toString()),
+                                    Double.parseDouble(etProbability.getText().toString())
+                            );
+                            findViewById(R.id.message).setVisibility(View.VISIBLE);
+                            TextView textView = findViewById(R.id.result);
+                            textView.setText(String.format("%.4f", binomialDistribution.getProb()));
+                        }
+                        break;
                     case 2:
-
+                        break;
                     case 3:
-                        checkBinomialInput();
+                        if (checkBinomialInput()) {
+                            Negative negative = new Negative(
+                                    Integer.parseInt(etExperiments.getText().toString()),
+                                    Integer.parseInt(etSuccess.getText().toString()),
+                                    Double.parseDouble(etProbability.getText().toString())
+                            );
+
+                            findViewById(R.id.message).setVisibility(View.VISIBLE);
+                            TextView textView = findViewById(R.id.result);
+                            textView.setText(String.format("%.4f", negative.distribution()));
+                        }
+                        break;
                     case 4:
-                        checkGeometricInput();
+                        if (checkGeometricInput()) {
+                            Geometric geometric = new Geometric(
+                                    Integer.parseInt(etExperiments.getText().toString()),
+                                    Double.parseDouble(etProbability.getText().toString())
+                            );
+                            findViewById(R.id.message).setVisibility(View.VISIBLE);
+                            TextView textView = findViewById(R.id.result);
+                            textView.setText(String.format("%.4f", geometric.distribution()));
+                        }
+                        break;
                     case 5:
                         if (checkPoissonInput()) {
                             Poisson poisson = new Poisson(Double.parseDouble(etProbability.getText().toString()),
                                     Double.parseDouble(etExperiments.getText().toString()),
                                     Integer.parseInt(etSuccess.getText().toString()));
 
-                            Toast.makeText(MainActivity.this, String.format("La probabilidad es %f", poisson.resu()), Toast.LENGTH_SHORT).show();
+                            findViewById(R.id.message).setVisibility(View.VISIBLE);
+                            TextView textView = findViewById(R.id.result);
+                            textView.setText(String.format("%.4f", poisson.resu()));
                         }
                 }
             }
         });
-        fab.setVisibility(View.GONE);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

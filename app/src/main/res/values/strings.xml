@@ -13,6 +13,8 @@
 
     <string name="action_info">Info</string>
 
+    <string name="message">The probability is:</string>
+
     <string name="hint_success">Number of success</string>
     <string name="hint_experiment">Number of experiments</string>
     <string name="hint_probability">Probability of success</string>
