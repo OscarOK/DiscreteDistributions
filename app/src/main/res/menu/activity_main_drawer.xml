@@ -6,25 +6,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_overview"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_overview"
             android:title="@string/overview" />
         <item
             android:id="@+id/nav_binomial"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_binomial"
             android:title="@string/binomial_dis" />
         <item
             android:id="@+id/nav_multinomial"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_multinomial"
             android:title="@string/multinomial_dis" />
         <item
             android:id="@+id/nav_negative"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_negative"
             android:title="@string/negative_dis" />
         <item
             android:id="@+id/nav_geometric"
-            android:title="@string/geometric_dis" />
+            android:title="@string/geometric_dis"
+            android:icon="@drawable/ic_geometric"/>
         <item
             android:id="@+id/nav_poisson"
-            android:title="@string/poisson_dis" />
+            android:title="@string/poisson_dis"
+            android:icon="@drawable/ic_poisson"/>
     </group>
 </menu>

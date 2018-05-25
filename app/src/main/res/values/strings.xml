@@ -4,15 +4,30 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="overview">Overview</string>
+    <string name="overview">Project info</string>
     <string name="binomial_dis">Binomial Distribution</string>
-    <string name="multinomial_dis">Multinomial distribution</string>
+    <string name="multinomial_dis">Multinomial Distribution</string>
     <string name="negative_dis">Negative Distribution</string>
     <string name="geometric_dis">Geometric Distribution</string>
     <string name="poisson_dis">Poisson Distribution</string>
+
+    <string name="action_info">Info</string>
+
+    <string name="hint_success">Number of success</string>
+    <string name="hint_experiment">Number of experiments</string>
+    <string name="hint_probability">Probability of success</string>
+
+    <string name="error_input">Please fill in the field</string>
+    <string name="error_success_greater">The success can not be greater than experiments</string>
+    <string name="error_probability">The probability of success is illogical</string>
+
+    <string name="hint_lambda">Lambda</string>
+    <string name="hint_poisson_t">Interval t</string>
+    <string name="hint_poisson_x">X</string>
 
     <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
+

@@ -2,8 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     tools:context="com.oscarok.discretedistributions.fragments.BinomialFragment">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,13 +14,13 @@
             android:id="@+id/input_layout_success"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:layout_marginBottom="8dp">
 
             <EditText
                 android:id="@+id/input_success"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Number of success"
+                android:hint="@string/hint_success"
                 android:inputType="number" />
 
         </android.support.design.widget.TextInputLayout>
@@ -27,13 +28,14 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_experiments"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
 
             <EditText
                 android:id="@+id/input_experiments"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Number of experiments"
+                android:hint="@string/hint_experiment"
                 android:inputType="number" />
 
         </android.support.design.widget.TextInputLayout>
@@ -41,13 +43,14 @@
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_probability"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
 
             <EditText
                 android:id="@+id/input_probability"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Probability value"
+                android:hint="@string/hint_probability"
                 android:inputType="numberDecimal" />
 
         </android.support.design.widget.TextInputLayout>
